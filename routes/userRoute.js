@@ -5,14 +5,12 @@ const userController = require('../controllers/userController');
 
 router.get('/', userController.user_list_get);
 
-router.get('/:id', (req, res) => {
-  res.send('Requested user ' + req.params.id);
-});
+router.get('/:id', userController.user_get);
 
 router.post('/', userController.user_create_post);
 
 router.put('/', (req, res) => {
-  res.send('With this endpoint you can edit users.');
+  res.send('With this endpoint you can modify users.');
 });
 
 router.delete('/', (req, res) => {
